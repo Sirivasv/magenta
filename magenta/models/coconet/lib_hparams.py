@@ -20,10 +20,10 @@ from __future__ import print_function
 import itertools as it
 import os
 
-from magenta.models.coconet import lib_util
+import lib_util
 import numpy as np
 import six
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 import yaml
 
 

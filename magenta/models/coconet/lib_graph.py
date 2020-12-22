@@ -20,9 +20,9 @@ from __future__ import print_function
 import collections
 import os
 
-from magenta.models.coconet import lib_hparams
-from magenta.models.coconet import lib_tfutil
-import tensorflow.compat.v1 as tf
+import lib_hparams
+import lib_tfutil
+import tensorflow as tf
 
 
 class CoconetGraph(object):
@@ -280,7 +280,7 @@ class CoconetGraph(object):
       tf.logging.info('num_splits %d', num_splits)
       if num_splits > 1:
         num_outputs = None
-      conv = tf.layers.separable_conv2d(
+      conv = tf.contrib.layers.separable_conv2d(
           x,
           num_outputs,
           filter_shape[:2],

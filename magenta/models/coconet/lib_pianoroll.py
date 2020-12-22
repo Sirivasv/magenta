@@ -16,7 +16,7 @@
 """Utilities for converting between NoteSequences and pianorolls."""
 import numpy as np
 import pretty_midi
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
 
 class PitchOutOfEncodeRangeError(Exception):
