@@ -89,6 +89,7 @@ class CoconetGraph(object):
     self.residual_init()
 
     layers = self.hparams.get_conv_arch().layers
+    # print(self.hparams.get_conv_arch().layers)
     n = len(layers)
     for i, layer in enumerate(layers):
       with tf.variable_scope('conv%d' % i):
@@ -252,6 +253,7 @@ class CoconetGraph(object):
       return x
 
     filter_shape = layer['filters']
+    print(layer)
     # Instantiate or retrieve filter weights.
     fanin = tf.to_float(tf.reduce_prod(filter_shape[:-1]))
     stddev = tf.sqrt(tf.div(2.0, fanin))
@@ -275,6 +277,9 @@ class CoconetGraph(object):
           padding=layer.get('conv_pad', 'SAME'),
           dilations=[1] + dilation_rates + [1])
     else:
+      tf.logging.info("-----------------------")
+      print(self.is_training)
+      tf.logging.info("++++++++++++++++++++++++")
       num_outputs = filter_shape[-1]
       num_splits = layer.get('num_pointwise_splits', 1)
       tf.logging.info('num_splits %d', num_splits)
@@ -285,11 +290,13 @@ class CoconetGraph(object):
           num_outputs,
           filter_shape[:2],
           depth_multiplier=self.hparams.sep_conv_depth_multiplier,
-          stride=layer.get('conv_stride', 1),
+          strides=layer.get('conv_stride', (1,1)),
           padding=layer.get('conv_pad', 'SAME'),
-          rate=layer.get('dilation_rate', 1),
-          activation_fn=None,
-          weights_initializer=initializer if self.is_training else None)
+          dilation_rate=tuple(layer.get('dilation_rate', (1,1))),
+          activation=None,
+          depthwise_initializer=initializer if self.is_training else None,
+          pointwise_initializer=initializer if self.is_training else None
+          )
       if num_splits > 1:
         splits = tf.split(conv, num_splits, -1)
         print(len(splits), splits[0].shape)
