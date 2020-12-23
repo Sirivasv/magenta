@@ -16,11 +16,11 @@
 """Helpers for evaluating the log likelihood of pianorolls under a model."""
 import time
 
-from magenta.models.coconet import lib_tfutil
-from magenta.models.coconet import lib_util
+import lib_tfutil
+import lib_util
 import numpy as np
 from scipy.misc import logsumexp
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
 
 def evaluate(evaluator, pianorolls):

@@ -19,12 +19,12 @@ from __future__ import print_function
 
 import os
 
-from magenta.models.coconet import lib_data
-from magenta.models.coconet import lib_evaluation
-from magenta.models.coconet import lib_graph
-from magenta.models.coconet import lib_util
+import lib_data
+import lib_evaluation
+import lib_graph
+import lib_util
 import numpy as np
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
 flags = tf.app.flags
@@ -167,6 +167,6 @@ def print_statistics(pianorolls):
 
 
 if __name__ == '__main__':
-  tf.disable_v2_behavior()
+  # tf.disable_v2_behavior()
   tf.logging.set_verbosity(tf.logging.INFO)
   tf.app.run()

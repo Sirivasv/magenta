@@ -4,3 +4,4 @@ checkpoint/
 .vscode/
 __pycache__
 logs/
+eval_logdir/

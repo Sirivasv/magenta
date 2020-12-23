@@ -22,13 +22,14 @@ set -e
 # http://download.magenta.tensorflow.org/models/coconet/checkpoint.zip
 # and pass the path up to the inner most directory as first argument when running this
 # script.
-checkpoint=$1
+# scipy is 0.18.1
+checkpoint=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/logs/'dilated-9-64_bs=10,corrupt=0.5,len=32,lr=0.0625,mm=orderless,nreg_conv=2,num_i=4,n_pch=46,mask_only=False,quant=0.125,rescale=True,depth_mul=1,sep=True,res=True,sconv=True,soft=True'/
 
 # Change this to where data is loaded from.
-data_dir="testdata"
+data_dir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/data/
 
 # Change this to where evaluation results are stored.
-eval_logdir="eval_logdir"
+eval_logdir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/eval_logdir/
 
 # Evaluation settings.
 fold=valid
