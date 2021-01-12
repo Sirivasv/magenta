@@ -72,3 +72,14 @@ In `train_bazel.sh`, you will need to configure several directories:
 Uria, B., Murray, I., & Larochelle, H. (2014, January). A deep and tractable density estimator. In International Conference on Machine Learning (pp. 467-475).
 
 Yao, L., Ozair, S., Cho, K., & Bengio, Y. (2014, September). On the equivalence between deep nade and generative stochastic networks. In Joint European Conference on Machine Learning and Knowledge Discovery in Databases (pp. 322-336). Springer, Berlin, Heidelberg.
+
+
+
+## REFURBISHED PACKAGES
+tensorflow==1.8
+scipy==0.18.1
+pretty_midi==0.2.9
+numpy==1.19.2
+python==3.6.12
+pyyaml
+

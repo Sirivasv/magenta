@@ -23,13 +23,23 @@ set -e
 # and pass the path up to the inner most directory as first argument when running this
 # script.
 # scipy is 0.18.1
-checkpoint=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/logs/'dilated-9-64_bs=10,corrupt=0.5,len=32,lr=0.0625,mm=orderless,nreg_conv=2,num_i=4,n_pch=46,mask_only=False,quant=0.125,rescale=True,depth_mul=1,sep=True,res=True,sconv=True,soft=True'/
+
+# WRKSTATION
+# checkpoint=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/logs/'dilated-9-64_bs=10,corrupt=0.5,len=32,lr=0.0625,mm=orderless,nreg_conv=2,num_i=4,n_pch=46,mask_only=False,quant=0.125,rescale=True,depth_mul=1,sep=True,res=True,sconv=True,soft=True'/
+# LAP
+checkpoint=/home/sirivasv/Documents/Projects/magenta/magenta/models/coconet/logs/'dilated-9-64_bs=10,corrupt=0.5,len=32,lr=0.0625,mm=orderless,nreg_conv=2,num_i=4,n_pch=46,mask_only=False,quant=0.125,rescale=True,depth_mul=1,sep=True,res=True,sconv=True,soft=True'/
 
 # Change this to where data is loaded from.
-data_dir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/data/
+# WRKSTATION
+# data_dir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/data/
+#LAP
+data_dir=/home/sirivasv/Documents/Projects/magenta/magenta/models/coconet/data/
 
 # Change this to where evaluation results are stored.
-eval_logdir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/eval_logdir/
+# WRKSTATION
+# eval_logdir=/home/sirivasv/Documents/projects/magenta/magenta/models/coconet/eval_logdir/
+# LAP
+eval_logdir=/home/sirivasv/Documents/Projects/magenta/magenta/models/coconet/eval_logdir/
 
 # Evaluation settings.
 fold=valid

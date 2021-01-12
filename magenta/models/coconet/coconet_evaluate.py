@@ -137,7 +137,7 @@ def get_fold_pianorolls(fold, hparams):
   print_statistics(pianorolls)
   if FLAGS.fold_index is not None:
     pianorolls = [pianorolls[int(FLAGS.fold_index)]]
-  return pianorolls
+  return pianorolls[:5]
 
 
 def get_path_pianorolls(path):
